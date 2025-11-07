@@ -8,7 +8,7 @@
 ## ✨ Demo
 > Add a screenshot or GIF of the UI here (see instructions below).
 
-![Landing Page Screenshot](docs/screenshot-landing.png)
+![Landing Page Screenshot](docs/Screenshot 2025-11-07 124456.png)
 <!-- Replace with your actual image file path after uploading to repo -->
 
 ---
