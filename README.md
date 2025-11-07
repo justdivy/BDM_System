@@ -3,16 +3,6 @@
 
 **Blood Donation Management System** is a clean, responsive mini-project built for college — featuring a Tailwind CSS frontend, Node + Express backend, and MySQL database. It allows donors to register and hospitals/relatives to post urgent blood requests.
 
----
-
-## ✨ Demo
-> Add a screenshot or GIF of the UI here (see instructions below).
-
-![Landing Page Screenshot](docs)
-<!-- Replace with your actual image file path after uploading to repo -->
-
----
-
 ## 🔥 Features
 - Donor registration (name, email, phone, blood group, password)
 - Donation request form (patient, hospital, blood group, units, urgency, address)
@@ -33,8 +23,3 @@
 ## 🚀 Quick Start (Run locally)
 
 > Prerequisites: Node.js, npm, MySQL installed.
-
-1. Clone the repo
-```bash
-git clone https://github.com/<YOUR_USERNAME>/<YOUR_REPO>.git
-cd <YOUR_REPO>
