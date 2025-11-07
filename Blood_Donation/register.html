@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donor Registration</title>
+
+  <!-- ✅ Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Simple Fade Animation */
+    .fade-in {
+      animation: fadeIn 0.8s ease-in-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-red-50 to-white min-h-screen flex items-center justify-center p-5">
+
+  <div class="fade-in bg-white p-8 rounded-2xl shadow-xl w-full max-w-md border-t-4 border-red-600">
+
+    <h1 class="text-3xl font-bold text-center text-red-600 mb-6">
+      🩸 Donor Registration
+    </h1>
+
+    <form id="registerForm" class="space-y-4">
+
+      <div>
+        <label class="text-sm font-medium">Full Name</label>
+        <input type="text" name="name" required
+          class="w-full p-3 mt-1 border rounded-xl focus:ring-2 focus:ring-red-500" />
+      </div>
+
+      <div>
+        <label class="text-sm font-medium">Email</label>
+        <input type="email" name="email" required
+          class="w-full p-3 mt-1 border rounded-xl focus:ring-2 focus:ring-red-500" />
+      </div>
+
+      <div>
+        <label class="text-sm font-medium">Blood Group</label>
+        <select name="bloodGroup" required
+          class="w-full p-3 mt-1 border rounded-xl bg-white focus:ring-2 focus:ring-red-500">
+          <option value="">Select Blood Group</option>
+          <option>A+</option>
+          <option>A-</option>
+          <option>B+</option>
+          <option>B-</option>
+          <option>O+</option>
+          <option>O-</option>
+          <option>AB+</option>
+          <option>AB-</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="text-sm font-medium">Phone Number</label>
+        <input type="text" name="phone" required
+          class="w-full p-3 mt-1 border rounded-xl focus:ring-2 focus:ring-red-500" />
+      </div>
+
+      <div>
+        <label class="text-sm font-medium">Password</label>
+        <input type="password" name="password" required
+          class="w-full p-3 mt-1 border rounded-xl focus:ring-2 focus:ring-red-500" />
+      </div>
+
+      <!-- ✅ Animated Button -->
+      <button type="submit"
+        class="w-full bg-red-600 text-white py-3 rounded-xl font-semibold hover:bg-red-700 transition-all shadow-md active:scale-95">
+        Register Now
+      </button>
+
+    </form>
+
+  </div>
+
+  <!-- ✅ Backend Connection -->
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = Object.fromEntries(new FormData(e.target).entries());
+
+      const res = await fetch("http://localhost:5000/api/donors/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await res.json();
+      alert(data.message || "Registered Successfully!");
+    });
+  </script>
+
+</body>
+
+</html>
