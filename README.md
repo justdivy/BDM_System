@@ -1,7 +1,5 @@
 # Blood Donation Management System 🩸
 
-[![Repository Size](https://img.shields.io/github/repo-size/<justdivy>/<BDM_System>?style=flat)]()
-[![License](https://img.shields.io/badge/license-MIT-red.svg)]()
 
 **Blood Donation Management System** is a clean, responsive mini-project built for college — featuring a Tailwind CSS frontend, Node + Express backend, and MySQL database. It allows donors to register and hospitals/relatives to post urgent blood requests.
 
